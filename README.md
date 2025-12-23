@@ -1,6 +1,7 @@
 # [React Learning Journey 🌱](https://react-learning-rho-mauve.vercel.app/)
 
 This repository documents my journey of learning React step by step.
+[View Demo](https://react-learning-rho-mauve.vercel.app/)
 
 ## What I have learned so far:
 - React components & props
