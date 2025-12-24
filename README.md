@@ -1,6 +1,11 @@
-# React Learning Journey 🌱
+# [React Learning Journey 🌱](https://react-learning-rho-mauve.vercel.app/)
 
+<<<<<<< HEAD
 This repository documents my step-by-step journey of learning React through hands-on practice and mini projects.
+=======
+This repository documents my journey of learning React step by step.
+[View Demo](https://react-learning-rho-mauve.vercel.app/)
+>>>>>>> 8d642271a915c31d9a1a9f769f4d39182c29f361
 
 ## 🚀 What I have built so far
 - Reusable React components
