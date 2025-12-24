@@ -9,7 +9,8 @@ function Employee(props)
             <button onClick={()=>{
                 props.onEmployeeClick();
                 setClickCount(cnt + 1);
-            }} className="clickbtn">Click Me</button>
+            }} className="clickbtn">Increment</button>
+            <button className="resetBtn" onClick={()=>setClickCount(0)}>Reset</button>
             <button className="deleteBtn" onClick={props.onDeleteEmployee}>Delete</button>
         </div>
     );
