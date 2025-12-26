@@ -47,6 +47,7 @@ function App() {
           {showList ? "Hide List" : "Show List"}
         </button>
 
+        {showList && <h4> Total Employees {Employees.length}</h4>}
         {showList &&
           Employees.length > 0 &&
           Employees.map((emp, index) => (
