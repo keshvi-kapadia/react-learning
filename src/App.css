@@ -156,3 +156,10 @@ h1
   box-shadow: 0 2px #0e2b2e;
   transform: translateY(2px);
 }
+
+#addBtn:disabled
+{
+  background-color: grey;
+  cursor: not-allowed;
+  box-shadow: none;
+}
