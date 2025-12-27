@@ -2,13 +2,23 @@ import "./App.css";
 import Intro from "./Intro.jsx";
 import Footer from "./Footer.jsx";
 import Employee from "./Emplyee.jsx";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 function App() {
-  const [Employees, setEmployees] = useState(["Keshvi", "Khushi"]);
+  const [Employees, setEmployees] = useState(()=>
+  {
+    const savedEmployees = localStorage.getItem("employeesData");
+    return savedEmployees ? JSON.parse(savedEmployees) : ["Keshvi","Khushi"];
+  });
   // let Employees=["Keshvi","Khushi","Shruti","Harshita","Jiya"];
   const [showList, setshowList] = useState(false);
   const [empVal, setempVal] = useState("");
+
+  useEffect(()=>
+    {
+      console.log("Employees List Updated:",Employees);
+      localStorage.setItem("employeesData",JSON.stringify(Employees));
+    }, [Employees]);
 
   function addEmp() {
     setEmployees(() => [...Employees, empVal]);

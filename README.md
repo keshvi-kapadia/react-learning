@@ -59,6 +59,14 @@ This repository documents my daily progress while learning React through hands-o
 - Understanding disabled state vs visual styling
 - CSS state debugging
 
+**Day 14**
+- Learning and applying `useEffect`
+- Understanding React side effects
+- Persisting state using `localStorage`
+- Fixing state overwrite issues using lazy initialization
+- Making employee data survive page refresh
+
+
 ---
 
 ## 📌 Current Mini Project

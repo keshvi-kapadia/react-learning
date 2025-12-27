@@ -131,15 +131,18 @@ h1
   transform: translateY(2px);
 }
 
-#addEmpib
-{
-  padding: 0.5em;
-  font-size: medium;
+#addEmpib {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 75%;
 }
 
 #addBtn
 {
-    margin-top: 1rem;
+  margin-top: 1rem;
   margin-left: 1rem;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -149,6 +152,7 @@ h1
   border: none;
   border-radius: 4px;
   box-shadow: 0 4px #0e2b2e;
+
 }
 
 #addBtn:active
