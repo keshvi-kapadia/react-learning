@@ -2,7 +2,7 @@ import "./App.css";
 import Intro from "./Intro.jsx";
 import Footer from "./Footer.jsx";
 import Employee from "./Emplyee.jsx";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 
 function App() {
   const [Employees, setEmployees] = useState(()=>
@@ -13,6 +13,7 @@ function App() {
   // let Employees=["Keshvi","Khushi","Shruti","Harshita","Jiya"];
   const [showList, setshowList] = useState(false);
   const [empVal, setempVal] = useState("");
+  var totalEmpClick=useRef(0);
 
   useEffect(()=>
     {
@@ -69,6 +70,10 @@ function App() {
               }}
               onDeleteEmployee={() => {
                 setEmployees(() => Employees.filter((e) => e !== emp));
+              }}
+              employeeClicked={()=>{
+                totalEmpClick.current+=1;
+                console.log(`Emps Clicked ${totalEmpClick.current} times`);
               }}
             />
           ))}

@@ -4,7 +4,7 @@ function Employee(props)
 {
     const [cnt,setClickCount]=useState(0);
     return(
-        <div className="employeeCard">
+        <div className="employeeCard" onClick={props.employeeClicked}>
             <h3>{props.name} - {cnt}</h3>
             <button onClick={()=>{
                 props.onEmployeeClick();

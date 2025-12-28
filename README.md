@@ -1,93 +1,53 @@
 # React Learning Journey 🌱
 [Live Demo](https://react-learning-rho-mauve.vercel.app/)
 
-This repository documents my daily progress while learning React through hands-on practice.
+This repository documents my step-by-step journey of learning React through daily hands-on practice.
 
 ---
 
-## 📅 Daily Progress Summary
+## 📅 Progress Summary
 
-**Day 1–2**
-- Project setup using Vite
-- Understanding folder structure and core files
-- Creating first React component
+- **Days 1–3:**  
+  Project setup with Vite, folder structure, basic components
 
-**Day 3**
-- Creating multiple components
-- Importing and using components inside App.jsx
+- **Days 4–5:**  
+  Props, reusable components, rendering lists with `map()`
 
-**Day 4**
-- Using props to pass data to components
-- Creating reusable components
+- **Days 6–7:**  
+  Event handling, `useState`, dynamic UI updates
 
-**Day 5**
-- Rendering lists using `map()`
-- Using `key` prop for list items
+- **Days 8–9:**  
+  Conditional rendering, parent–child communication
 
-**Day 6**
-- Handling button click events
-- Understanding event-driven UI updates
+- **Days 10–11:**  
+  Deleting items, controlled inputs, dynamic state updates
 
-**Day 7**
-- Introducing `useState`
-- Updating text and UI based on state
+- **Days 12–13:**  
+  UI improvements, derived state, button disabling, CSS fixes
 
-**Day 8**
-- Conditional rendering (show/hide list)
-- Managing boolean state
+- **Day 14:**  
+  `useEffect`, side effects, localStorage persistence
 
-**Day 9**
-- Passing functions as props
-- Parent–child communication
-
-**Day 10**
-- Managing component-level state
-- Implementing delete functionality
-- Handling state updates immutably
-
-**Day 11**
-- Controlled input fields
-- Adding new employees dynamically
-- Clearing input after submission
-
-**Day 12**
-- Removing unnecessary state
-- Using derived state (`array.length`) for UI logic
-
-**Day 13**
-- UX improvement by disabling Add button
-- Understanding disabled state vs visual styling
-- CSS state debugging
-
-**Day 14**
-- Learning and applying `useEffect`
-- Understanding React side effects
-- Persisting state using `localStorage`
-- Fixing state overwrite issues using lazy initialization
-- Making employee data survive page refresh
-
+- **Day 15:**  
+  `useRef`, tracking values without re-render, global click count
 
 ---
 
-## 📌 Current Mini Project
-**Employee Manager**
-- Add employees using input
+## 📌 Mini Project: Employee Manager
+- Add and delete employees
 - Show / hide employee list
-- Increment & reset click count per employee
-- Delete employees dynamically
-- Handle empty list cases cleanly
+- Per-employee click counter
+- Global click tracking using `useRef`
+- Persistent data using localStorage
 
 ---
 
 ## 🎯 Goal
-To build strong React fundamentals by learning consistently and creating real, working features.
+Build strong React fundamentals through consistent practice and real features.
 
 ---
 
 ## 🛠 Tech Stack
-- React
-- JavaScript
-- HTML
-- CSS
+React · JavaScript · HTML · CSS
 
 🌸 Learning in progress — one day at a time.
