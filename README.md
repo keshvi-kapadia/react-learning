@@ -29,7 +29,7 @@ This repository documents my step-by-step journey of learning React through dail
   `useEffect`, side effects, localStorage persistence
 
 - **Day 15:**  
-  `useRef`, tracking values without re-render, global click count
+  `useRef`, tracking values without re-render, global click count , input auto-focus
 
 ---
 

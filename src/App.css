@@ -45,6 +45,12 @@ h1
   
 }
 
+#empCOunt {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
 #footerContainer {
   margin-top: 3rem;
   font-size: 0.9rem;

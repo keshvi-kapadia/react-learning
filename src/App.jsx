@@ -2,7 +2,7 @@ import "./App.css";
 import Intro from "./Intro.jsx";
 import Footer from "./Footer.jsx";
 import Employee from "./Emplyee.jsx";
-import { useState,useEffect,useRef } from "react";
+import { useState,useEffect,useRef, use } from "react";
 
 function App() {
   const [Employees, setEmployees] = useState(()=>
@@ -13,7 +13,8 @@ function App() {
   // let Employees=["Keshvi","Khushi","Shruti","Harshita","Jiya"];
   const [showList, setshowList] = useState(false);
   const [empVal, setempVal] = useState("");
-  var totalEmpClick=useRef(0);
+  const totalEmpClick=useRef(0);
+  const inputRef=useRef(null);
 
   useEffect(()=>
     {
@@ -24,6 +25,7 @@ function App() {
   function addEmp() {
     setEmployees(() => [...Employees, empVal]);
     setempVal("");
+    inputRef.current.focus();
   }
   return (
     <>
@@ -43,6 +45,7 @@ function App() {
           value={empVal}
           placeholder="Enter Name"
           id="addEmpib"
+          ref={inputRef}
           onChange={(e) => setempVal(e.target.value)}
         />
         <button id="addBtn" onClick={addEmp} disabled={empVal === ""}>
@@ -58,7 +61,7 @@ function App() {
           {showList ? "Hide List" : "Show List"}
         </button>
 
-        {showList && <h4> Total Employees {Employees.length}</h4>}
+        {showList && <h4 id="empCOunt"> Total Employees : {Employees.length}</h4>}
         {showList &&
           Employees.length > 0 &&
           Employees.map((emp, index) => (
