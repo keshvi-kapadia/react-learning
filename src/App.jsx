@@ -2,31 +2,41 @@ import "./App.css";
 import Intro from "./Intro.jsx";
 import Footer from "./Footer.jsx";
 import Employee from "./Emplyee.jsx";
-import { useState,useEffect,useRef, use } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 function App() {
-  const [Employees, setEmployees] = useState(()=>
-  {
+  const [Employees, setEmployees] = useState(() => {
     const savedEmployees = localStorage.getItem("employeesData");
-    return savedEmployees ? JSON.parse(savedEmployees) : ["Keshvi","Khushi"];
+    return savedEmployees ? JSON.parse(savedEmployees) : ["Keshvi", "Khushi"];
   });
   // let Employees=["Keshvi","Khushi","Shruti","Harshita","Jiya"];
   const [showList, setshowList] = useState(false);
   const [empVal, setempVal] = useState("");
-  const totalEmpClick=useRef(0);
-  const inputRef=useRef(null);
+  const totalEmpClick = useRef(0);
+  const inputRef = useRef(null);
 
-  useEffect(()=>
-    {
-      console.log("Employees List Updated:",Employees);
-      localStorage.setItem("employeesData",JSON.stringify(Employees));
-    }, [Employees]);
+  console.log("App Rendered");
 
-  function addEmp() {
-    setEmployees(() => [...Employees, empVal]);
+  useEffect(() => {
+    console.log("Employees List Updated:", Employees);
+    localStorage.setItem("employeesData", JSON.stringify(Employees));
+  }, [Employees]);
+
+  const addEmp = useCallback(() => {
+    setEmployees((prev) => [...prev, empVal]);
     setempVal("");
     inputRef.current.focus();
-  }
+  }, [empVal]);
+
+  const deleteHandler = useCallback((empName) => {
+    setEmployees((prev) => prev.filter((emp) => emp !== empName));
+  }, []);
+
+  const empClickHandler = useCallback(() => {
+    totalEmpClick.current += 1;
+    console.log(`Emps Clicked ${totalEmpClick.current} times`);
+  }, []);
+
   return (
     <>
       <Intro />
@@ -61,7 +71,9 @@ function App() {
           {showList ? "Hide List" : "Show List"}
         </button>
 
-        {showList && <h4 id="empCOunt"> Total Employees : {Employees.length}</h4>}
+        {showList && (
+          <h4 id="empCOunt"> Total Employees : {Employees.length}</h4>
+        )}
         {showList &&
           Employees.length > 0 &&
           Employees.map((emp, index) => (
@@ -71,13 +83,8 @@ function App() {
               onEmployeeClick={() => {
                 console.log(emp);
               }}
-              onDeleteEmployee={() => {
-                setEmployees(() => Employees.filter((e) => e !== emp));
-              }}
-              employeeClicked={()=>{
-                totalEmpClick.current+=1;
-                console.log(`Emps Clicked ${totalEmpClick.current} times`);
-              }}
+              onDeleteEmployee={() => deleteHandler(emp)}
+              employeeClicked={empClickHandler}
             />
           ))}
 

@@ -1,8 +1,10 @@
 import { useState } from "react";
+import React from "react";
 
 function Employee(props)
 {
     const [cnt,setClickCount]=useState(0);
+    console.log("Employee Rendered:",props.name);
     return(
         <div className="employeeCard" onClick={props.employeeClicked}>
             <h3>{props.name} - {cnt}</h3>
@@ -15,4 +17,4 @@ function Employee(props)
         </div>
     );
 }
-export default Employee;
+export default React.memo(Employee);

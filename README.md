@@ -31,6 +31,9 @@ This repository documents my step-by-step journey of learning React through dail
 - **Day 15:**  
   `useRef`, tracking values without re-render, global click count , input auto-focus
 
+- **Day 16:**
+  `useCallback`, function memoization, dependency array, performance optimization, stable props
+
 ---
 
 ## 📌 Mini Project: Employee Manager
