@@ -2,7 +2,7 @@ import "./App.css";
 import Intro from "./Intro.jsx";
 import Footer from "./Footer.jsx";
 import Employee from "./Emplyee.jsx";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, use } from "react";
 
 function App() {
   const [Employees, setEmployees] = useState(() => {
@@ -14,6 +14,7 @@ function App() {
   const [empVal, setempVal] = useState("");
   const totalEmpClick = useRef(0);
   const inputRef = useRef(null);
+  const [timeSpent, setTimeSpent] = useState(0);
 
   console.log("App Rendered");
 
@@ -21,6 +22,18 @@ function App() {
     console.log("Employees List Updated:", Employees);
     localStorage.setItem("employeesData", JSON.stringify(Employees));
   }, [Employees]);
+
+  useEffect(() => {
+    localStorage.setItem("startTime", Date.now());
+
+    const interval = setInterval(() => {
+      const startTime = parseInt(localStorage.getItem("startTime"), 10);
+      const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+      setTimeSpent(elapsedTime);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const addEmp = useCallback(() => {
     setEmployees((prev) => [...prev, empVal]);
@@ -37,8 +50,16 @@ function App() {
     console.log(`Emps Clicked ${totalEmpClick.current} times`);
   }, []);
 
+  const minutes = String(Math.floor(timeSpent / 60)).padStart(2, "0");
+  const seconds = String(timeSpent % 60).padStart(2, "0");
+
   return (
     <>
+      <div id="timerContainer">
+        <h3 id="timer">
+          Time Spent : {minutes}:{seconds}
+        </h3>
+      </div>
       <Intro />
       {/*       
       <div className="employeeList">

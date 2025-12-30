@@ -33,6 +33,8 @@ This repository documents my step-by-step journey of learning React through dail
 
 - **Day 16:**
   `useCallback`, function memoization, dependency array, performance optimization, stable props
+- **Day 17:**
+  User Session Timer
 
 ---
 
